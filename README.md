@@ -1,7 +1,7 @@
 # SIH-2024-Practise
 # Transforming Agriculture: Empowering Farmers through Technology
 
-## Team Name: [Your Team Name]
+## Team Name: InnovateX
 
 ### Hackathon Theme: Agriculture, FoodTech & Rural Development
 
