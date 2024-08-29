@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Categories Page</title>
+	<link rel="stylesheet" href="product_1new.css">
+
+	<script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,as,bn,kn,gu,ml,mr,or,pa,ta,te,ur,mni,ks,doi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<style>
+    .breadcrumb {
+            display: flex;
+            list-style: none;
+            background-color: #f8f9fa;
+            padding: 30px;
+            position: fixed; /* Make the navigation fixed */
+            top: 0; /* Stick it to the top */
+            left: 0;
+            width: 100%; /* Full width of the page */
+            z-index: 1000; /* Ensure it's on top of other elements */
+            margin-top: 0; /* Adjust if needed */
+            margin-left: 0; /* Adjust to start from the left edge */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a subtle shadow */
+        }
+
+.breadcrumb-item {
+    margin-left: 70px;
+    margin-top: 1.18%;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #9b9b9b;
+}
+
+.breadcrumb-item a:hover
+{
+    color: #000000;
+    transition: all 0.6s;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left:70px;
+}
+
+.search-input {
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 300px; /* Adjust width as needed */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+.search-icon {
+    border: none;
+    background: none;
+    padding: 10px;
+    margin-left: -49px; /* Adjust this value based on the size of the icon and the padding */
+    cursor: pointer;
+}
+
+.search-icon i {
+    font-size: 20px; /* Adjust size of the icon */
+    color: #007bff; /* Color of the icon */
+}
+
+.search-icon:hover i {
+    color: #ffffff; /* Darker shade on hover */
+}
+
+/* Google Translate Styling */
+#google_translate_element {
+    margin-left:100px; /* Align to the right */
+	margin-top: 8px;
+	padding:7px;
+	border-radius:10px;
+}
+
+/* Dropdown Styling */
+#google_translate_element {
+    max-height: 80px;  /* Limit visible height to show 3-4 languages */
+      /* Enable scrolling */
+    font-size: 20px;   /* Increase font size for better visibility */
+}
+
+/* Hide the Google Translate banner */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+
+	</style>
+</head>
+<body>
+
+	<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="categories.html">Categories</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Current Category</li>
+            <form class="search-form" action="search_results.html" method="GET">
+                <input class="search-input" type="search" name="query" placeholder="Search..." aria-label="Search">
+                <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+			<!-- Google Translate Dropdown -->
+            <li id="google_translate_element"></li>
+        </ol>
+     
+    </nav>
+	<div class="category-list">
+		<!-- Static list of categories with images linking to different pages -->
+		
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_fruits.html">
+				<img class="category-image" src="fruits-1.webp" alt="Category Image 1">
+			</a>		
+		</div>
+		<div class="bottomtxt">
+			Fruits
+		</div>
+		</div>	
+		
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_Oilseeds.html">
+				<img class="category-image" src="Oil Seeds.webp" alt="Category Image 2">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Oil Seeds
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_cereal.html">
+				<img class="category-image" src="food-grains.webp" alt="Category Image 3">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Cereals
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_plantationCrops.html">
+				<img class="category-image" src="Plantation Crops.webp" alt="Category Image 4">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Plantation Crops
+		</div>
+	</div>
+
+
+        <div class="main boxs">
+		<div class="category">
+			<a href="product_Medicinal_and_Aromatic_Plants.html">
+				<img class="category-image" src="Medicnal and arometic plants.webp" alt="Category Image 5">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Medicinal & <br>Arometic Plants
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_beverageCrops.html">
+				<img class="category-image" src="Beverge Crops (1).webp" alt="Category Image 6">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Beverge Crops
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_vegetable.html">
+				<img class="category-image" src="vegetables.webp" alt="Category Image 7">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Vegetables
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_Sugar Crops.html">
+				<img class="category-image" src="beans1.png" alt="Category Image 8">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Beans
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_Spices.html">
+				<img class="category-image" src="Spices.webp" alt="Category Image 9">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Spices
+		</div>
+	</div>
+
+
+		<div class="main boxs">
+		<div class="category">
+			<a href="product_Sugar Crops.html">
+				<img class="category-image" src="Sugar Crops (1).webp" alt="Category Image 10">
+			</a>
+		</div>
+		<div class="bottomtxt">
+			Sugar Crops
+		</div>
+		</div>
+
+		<div class="main boxs">
+			<div class="category">
+				<a href="product_Fibers.html">
+					<img class="category-image" src="Fibers.webp" alt="Category Image 10">
+				</a>
+			</div>
+			<div class="bottomtxt">
+				Fibers
+			</div>
+		</div>
+
+		<div class="main boxs">
+			<div class="category">
+				<a href="product_ Floriculture.html">
+					<img class="category-image" src="Foriculture.webp" alt="Category Image 10">
+				</a>
+			</div>
+			<div class="bottomtxt">
+				Foriculture
+			</div>
+		</div>
+		
+	</div>
+
+	<script>
+		  function updateBreadcrumb(categoryName) {
+    const breadcrumb = document.querySelector('.breadcrumb-item.active');
+    breadcrumb.textContent = categoryName;
+}
+
+// Call this function when a user clicks on a category
+// Example:
+// updateBreadcrumb('Maize (Corn)');
+
+
+        // Update breadcrumb when clicking on a category link
+categoryList.querySelectorAll('.category a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const categoryName = cerealSet.name; // This gets the current cereal category name
+        updateBreadcrumb(categoryName);
+        // Optionally, you could navigate to a different page or load new content here
+    });
+});
+
+       
+	</script>
+</body>
+</html>
