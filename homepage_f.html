@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,as,bn,kn,gu,ml,mr,or,pa,ta,te,ur,mni,ks,doi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link rel="stylesheet" href="homepage_f.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="homepage.js" defer></script>
+</head>
+<body>
+
+    <div class="content-space-outer">
+        <div class="content-space"></div>
+    </div>
+    <header>
+        <div class="header">
+            <img src="logo31.jpg" alt="Logo" width="200" height="50">
+            <div>
+                <h3>MINISTRY OF AGRICULTURE AND FARMERS WELFARE</h3>
+                <p>कृषि एवं किसान कल्याण मंत्रालय</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="txttop" href="#">Home</a></li>
+                <li><a class="txttop" href="#">Product</a></li>
+                <li><a class="txttop" href="#">Market Price</a></li>
+             
+                <li><a class="ttop" href="#">More ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Favourite</a></li>
+                        <li><a href="#">Subsidy</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </li>
+                <!-- Google Translate Dropdown -->
+                <li id="google_translate_element"></li>
+                <img src="farmer.jfif" alt="Profile" class="user-pic">
+            </ul>
+         </nav>
+    </header>
+    <main>
+        <section class="wrapper">
+            <i class="fa-solid fa-arrow-left button" id="prev"></i>
+            <div class="image-container">
+                <div class="carousel">
+                    <img src="image5.jpg" alt="Image 1" />
+                    <img src="image7.jpg" alt="Image 2" />
+                    <img src="image6.jpg" alt="Image 3" />
+                    <img src="image1.jpg" alt="Image 4" />
+                    <img src="image2.jpg" alt="Image 5" />
+                    <img src="image3.jpg" alt="Image 6" />
+                    <img src="image4.jpg" alt="Image 7" />
+                </div>
+                <div class="bullets"></div>
+            </div>
+            <i class="fa-solid fa-arrow-right button" id="next"></i>
+        </section> 
+
+        <!-- Custom Grid Layout -->
+        <section class="custom-container">
+            <!-- First Row: 2 Rectangles -->
+            <div class="custom-boxs rectangle">
+                <img src="Farm Management- Tips and Tricks-1.webp" alt="Image 1">
+                <!-- <div class="custom-content">
+                    <h2 class="custom-object">Bhargavi Patel</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div> -->
+            </div>
+            <div class="custom-boxs rectangle">
+                <img src="Tips and Tricks-5.webp" alt="Image 2">
+                <!-- <div class="custom-content">
+                    <h2 class="custom-title">Harsh Kevadiya</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div> -->
+            </div>
+
+            <!-- Second Row: 3 Equal Squares -->
+            <div class="custom-boxs rectangle" class="custom-image">
+                <img src="Tips and Tricks-3.webp" alt="Image 3" >
+                <!-- <div class="custom-content">
+                    <h2 class="custom-title">Himal Joshi</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div> -->
+            </div>
+            <div class="custom-box square" class="custom-image">
+                <img src="farmer.jfif" alt="Image 4">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+            <div class="custom-box square"class="custom-image">
+                <img src="farmer.jfif" alt="Image 5">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+
+            <!-- Third Row: 1 Tall Square on the Left and 2 Squares on the Right -->
+            <div class="custom-boxs tall-square">
+                <img src="Tips and Tricks-4.webp" alt="Image 6">
+            </div>
+            <div class="custom-box small-square" class="custom-image">
+                <img src="farmer.jfif" alt="Image 7">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+            <div class="custom-box small-square" class="custom-image">
+                <img src="farmer.jfif" alt="Image 8">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+
+            <!-- Fourth Row: 1 Tall Square on the Left and 4 Squares on the Right -->
+            <div class="custom-boxs tall-square">
+                <img src="Tips and Tricks-2 (1).webp" alt="Image 9">
+            </div>
+            <div class="custom-box small-square" class="custom-image">
+                <img src="buyersphoto.jpg" alt="Image 10">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+            <div class="custom-box small-square" class="custom-image">
+                <img src="buyersphoto.jpg" alt="Image 11">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+            <div class="custom-box small-square" class="custom-image">
+                <img src="buyersphoto.jpg" alt="Image 12">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+            <div class="custom-box small-square" class="custom-image">
+                <img src="buyersphoto.jpg" alt="Image 13">
+                <div class="custom-content">
+                    <h2 class="custom-title">Full Name</h2>
+                    <p class="custom-description">Extra Information</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-logo-text">
+                    <img src="https://www.india.gov.in/sites/upload_files/npi/files/agriculture_0.png" alt="" class="footer-logo">
+                    <div>
+                        <p>AGRICULTURAL MARKET</p>
+                    </div>
+                </div>
+                <address>
+                    Address: LDRP-ITR College,Sector-15<br>
+                    Gandhinagar<br>
+                    Gujarat,INDIA<br>
+                    Tel No: +91 11 43845501<br>
+                    E-mail: info.ap@gov.org<br>
+                </address> 
+                <div class="social-media">
+                    <a href="#"><img src="https://th.bing.com/th?id=ODLS.79b840fb-42fb-47d2-a6d5-809f44ac96ea&w=32&h=32&qlt=90&pcl=fffffa&r=0&o=6&pid=1.2" alt="fb"></a>
+                    <a href="#"><img src="https://th.bing.com/th?id=ODLS.b025e722-4d2d-48a8-8181-422e22a04d81&w=32&h=32&qlt=90&pcl=fffffa&r=0&o=6&pid=1.2" alt="yt"></a>
+                    <a href="#"><img src="https://th.bing.com/th?id=ODLS.9cab171c-6190-48e1-b79f-fc45f657b2ae&w=32&h=32&qlt=90&pcl=fffffa&r=0&o=6&pid=1.2" alt="X"></a>
+                    <a href="#"><img src="https://th.bing.com/th?id=ODLS.bb0631e3-e2e4-454c-89dd-ee2ce22a7190&w=18&h=18&r=0&o=6&pid=1.2" alt="insta"></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <div class="line"></div>
+                    <div class="quick-links-columns">
+                        <ul>
+                            <li><a href="#">Farmer Portal</a></li>
+                            <li><a href="#">Market Price</a></li>
+                            <li><a href="#">Agriculture</a></li>
+                            <li><a href="#">Product</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">States/UT</a></li>
+                            <li><a href="#">Research</a></li>
+                            <li><a href="#">Media & Events</a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="footer-bottom">
+        <p>This Portal is a Mission Mode Project under the National E-Governance Plan and is owned, designed and developed by Student, Ministry of Agriculture & Farmer Welfare, Government of India. 
+         The content linked through NPI is owned and maintained by the respective Ministries/Departments.</p>
+    </div>
+    
+    <div class="footer-last">   
+        <div class="footer-initiative">
+            <img src="https://agriwelfare.gov.in/public/images/agriculture-logo-dark.png" alt="">
+            <div class="initiative-text">
+                <p class="small-text">An initiative of the</p>
+                <p class="large-text">MINISTRY OF AGRICULTURE & FARMER WELFARE</p>
+                <p  class="large-text">GOVERMENT OF INDIA</p>    
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © 2024 Government Of India</p>
+        </div>
+    </div>
+
+    
+        
+</body>
+</html>
