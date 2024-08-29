@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../try_error"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Final Website product",
+		"liveServer.settings.port": 5501
+	}
+}
