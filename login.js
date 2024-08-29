@@ -20,7 +20,9 @@ toggle_btn.forEach((btn) => {
   });
 });
 
-function moveSlider(index) {
+function moveSlider() {
+  let index = this.dataset.value;
+
   let currentImage = document.querySelector(`.img-${index}`);
   images.forEach((img) => img.classList.remove("show"));
   currentImage.classList.add("show");
@@ -29,23 +31,34 @@ function moveSlider(index) {
   textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
 
   bullets.forEach((bull) => bull.classList.remove("active"));
-  bullets[index - 1].classList.add("active");
+  this.classList.add("active");
 }
 
 bullets.forEach((bullet) => {
-  bullet.addEventListener("click", function () {
-    moveSlider(parseInt(this.dataset.value));
-  });
+  bullet.addEventListener("click", moveSlider);
 });
 
-let currentIndex = 1;
+let zoomLevel = 1;
+        const zoomContainer = document.getElementById('zoomContainer');
 
-function autoSlide() {
-  currentIndex++;
-  if (currentIndex > bullets.length) {
-    currentIndex = 1;
-  }
-  moveSlider(currentIndex);
-}
+        function zoomIn() {
+            zoomLevel += 0.1;
+            zoomContainer.style.transform = `scale(${zoomLevel})`;
+        }
 
-setInterval(autoSlide, 2800); // 2200ms = 2.8 seconds
+        function zoomOut() {
+            if (zoomLevel > 0.1) {
+                zoomLevel -= 0.1;
+                zoomContainer.style.transform = `scale(${zoomLevel})`;
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === '+') {
+                event.preventDefault();
+                zoomIn();
+            } else if (event.ctrlKey && event.key === '-') {
+                event.preventDefault();
+                zoomOut();
+            }
+        });
