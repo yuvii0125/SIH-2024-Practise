@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit Categories Page</title>
+    <link rel="stylesheet" href="product_categories.css">
+
+    
+	<script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,as,bn,kn,gu,ml,mr,or,pa,ta,te,ur,mni,ks,doi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+          
+          .category-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 80px;
+            margin-top: 130px;
+
+        }
+
+        .category-title {
+            font-size: 30px;
+            margin-bottom: 19px;
+            text-align:left;
+            margin-left: 20px;
+            font-weight: 560;
+        }
+
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            background-color: #f8f9fa;
+            padding: 30px;
+            position: fixed; /* Make the navigation fixed */
+            top: 0; /* Stick it to the top */
+            left: 0;
+            width: 100%; /* Full width of the page */
+            z-index: 1000; /* Ensure it's on top of other elements */
+            margin-top: 0; /* Adjust if needed */
+            margin-left: 0; /* Adjust to start from the left edge */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a subtle shadow */
+        }
+
+.breadcrumb-item {
+    margin-left: 70px;
+    margin-top: 1.18%;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #9b9b9b;
+}
+
+.breadcrumb-item a:hover
+{
+    color: #000000;
+    transition: all 0.6s;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left:70px;
+}
+
+.search-input {
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 300px; /* Adjust width as needed */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+.search-icon {
+    border: none;
+    background: none;
+    padding: 10px;
+    margin-left: -49px; /* Adjust this value based on the size of the icon and the padding */
+    cursor: pointer;
+}
+
+.search-icon i {
+    font-size: 20px; /* Adjust size of the icon */
+    color: #007bff; /* Color of the icon */
+}
+
+.search-icon:hover i {
+    color: #ffffff; /* Darker shade on hover */
+}
+
+/* Google Translate Styling */
+#google_translate_element {
+    margin-left:100px; /* Align to the right */
+	margin-top: 8px;
+	padding:7px;
+	border-radius:10px;
+}
+
+/* Dropdown Styling */
+#google_translate_element {
+    max-height: 80px;  /* Limit visible height to show 3-4 languages */
+      /* Enable scrolling */
+    font-size: 20px;   /* Increase font size for better visibility */
+}
+
+/* Hide the Google Translate banner */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="categories.html">Categories</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Current Category</li>
+            <form class="search-form" action="search_results.html" method="GET">
+                <input class="search-input" type="search" name="query" placeholder="Search..." aria-label="Search">
+                <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <!-- Google Translate Dropdown -->
+            <li id="google_translate_element"></li>
+        </ol>
+     
+    </nav>
+    <div class="container">
+        <!-- Fruit sets will be dynamically inserted here -->
+    </div>
+
+    <script>
+        // Create an array of sets of categories with specific fruit types
+        const fruitSets = [
+        { name: "Apple", categories: [
+        { id: 1, image: "Ambri Apples.webp", link: "product_for_sale.html", type: "Ambari Apple" },
+        { id: 2, image: "Fuji Apples.webp", link: "product_for_sale.html", type: "Fuji Apple" },
+        { id: 3, image: "Golden Apple.webp", link: "product_for_sale.html", type: "Golden Apple" },
+        { id: 4, image: "Red Apple.webp", link: "product_for_sale.html", type: "Red Apple" },
+        { id: 5, image: "Royal-Apples.webp", link: "product_for_sale.html", type: "Royal-Apple" },
+       
+    ]},
+    { name: "Mango", categories: [
+        { id: 6, image: "Banganapalli mangos.webp", link: "page1.html", type: "Banganapalli mango" },
+        { id: 7, image: "RajaPuri.webp", link: "page2.html", type: "RajaPuri Mango" },
+        { id: 8, image: "totapuri-mango.webp", link: "page3.html", type: "Totapuri Mango" },
+        { id: 9, image: "dasheri mangos.webp", link: "page4.html", type: "Dasheri Mango" },
+        { id: 10, image: "Himsagar Mango.webp", link: "page5.html", type: "Himsagar Mango" },
+        { id: 11, image: "langra-mango.webp", link: "page6.html", type: "Langra Mango" },
+        { id: 12, image: "Neelum Mango.webp", link: "page7.html", type: "Neelum Mango" },
+        { id: 13, image: "Mallika Mango.webp", link: "page7.html", type: "Mallika Mango" },
+        { id: 14, image: "hapus-mango.webp", link: "page7.html", type: "Hapus Mango" },
+        { id: 15, image: "kesar-mango.webp", link: "page7.html", type: "Kesar Mango" }
+        
+    ]},
+ 
+    { name: "Chiku (Sapodilla)", categories: [
+        { id: 24, image: "kalipatti-chiku.webp", link: "page15.html", type: "Kalipatti Chiku" },
+        { id: 25, image: "chikoo-cricket-ball.webp", link: "page16.html", type: "Cricket Ball Chiku" },
+        { id: 26, image: "Pala-Chiku.webp", link: "page17.html", type: "Pala Chiku" },
+        { id: 27, image: "Baramasi-Chiku.webp", link: "page18.html", type: "Baramasi Chiku" },
+        { id: 28, image: "Dwarapudi-Chiku.webp", link: "page19.html", type: "Dwarapudi Chiku" },
+        { id: 29, image: "Vavi-Valsad-Chiku.webp", link: "page20.html", type: "Vavi Valsas Chiku" }
+    ]},
+    { name: "Banana", categories: [
+        { id: 16, image: "https://picsum.photos/400/607", link: "page8.html", type: "Cavendish Banana" },
+        { id: 17, image: "https://picsum.photos/400/608", link: "page9.html", type: "Red Banana" },
+        { id: 18, image: "https://picsum.photos/400/609", link: "page10.html", type: "Plantain Banana" },
+        { id: 20, image: "https://picsum.photos/400/610", link: "page11.html", type: "Lady Finger Banana" },
+        { id: 21, image: "https://picsum.photos/400/611", link: "page12.html", type: "Nendran Banana" },
+        { id: 22, image: "https://picsum.photos/400/612", link: "page13.html", type: "Manzano Banana" },
+        { id: 23, image: "https://picsum.photos/400/613", link: "page14.html", type: "Burro Banana" }
+    ]},
+    { name: "Pomegranate", categories: [
+        { id: 30, image: "https://picsum.photos/400/621", link: "page22.html" },
+        { id: 31, image: "https://picsum.photos/400/622", link: "page23.html" },
+        { id: 32, image: "https://picsum.photos/400/623", link: "page24.html" },
+        { id: 33, image: "https://picsum.photos/400/624", link: "page25.html" },
+        { id: 34, image: "https://picsum.photos/400/625", link: "page26.html" },
+        { id: 35, image: "https://picsum.photos/400/626", link: "page27.html" },
+        { id: 36, image: "https://picsum.photos/400/627", link: "page28.html" }
+    ]},
+    { name: "Papaya", categories: [
+        { id: 29, image: "https://picsum.photos/400/628", link: "page29.html" },
+        { id: 30, image: "https://picsum.photos/400/629", link: "page30.html" },
+        { id: 31, image: "https://picsum.photos/400/630", link: "page31.html" },
+        { id: 32, image: "https://picsum.photos/400/631", link: "page32.html" },
+        { id: 33, image: "https://picsum.photos/400/632", link: "page33.html" },
+        { id: 34, image: "https://picsum.photos/400/633", link: "page34.html" },
+        { id: 35, image: "https://picsum.photos/400/634", link: "page35.html" }
+    ]},
+    { name: "Guava", categories: [
+        { id: 36, image: "https://picsum.photos/400/635", link: "page36.html" },
+        { id: 37, image: "https://picsum.photos/400/636", link: "page37.html" },
+        { id: 38, image: "https://picsum.photos/400/637", link: "page38.html" },
+        { id: 39, image: "https://picsum.photos/400/638", link: "page39.html" },
+        { id: 40, image: "https://picsum.photos/400/639", link: "page40.html" },
+        { id: 41, image: "https://picsum.photos/400/640", link: "page41.html" },
+        { id: 42, image: "https://picsum.photos/400/641", link: "page42.html" }
+    ]},
+    { name: "Citrus Fruits (Lime, Sweet Lime)", categories: [
+        { id: 43, image: "https://picsum.photos/400/642", link: "page43.html" },
+        { id: 44, image: "https://picsum.photos/400/643", link: "page44.html" },
+        { id: 45, image: "https://picsum.photos/400/644", link: "page45.html" },
+        { id: 46, image: "https://picsum.photos/400/645", link: "page46.html" },
+        { id: 47, image: "https://picsum.photos/400/646", link: "page47.html" },
+        { id: 48, image: "https://picsum.photos/400/647", link: "page48.html" },
+        { id: 49, image: "https://picsum.photos/400/648", link: "page49.html" }
+    ]},
+    { name: "Custard Apple (Sitaphal)", categories: [
+        { id: 50, image: "https://picsum.photos/400/649", link: "page50.html" },
+        { id: 51, image: "https://picsum.photos/400/650", link: "page51.html" },
+        { id: 52, image: "https://picsum.photos/400/651", link: "page52.html" },
+        { id: 53, image: "https://picsum.photos/400/652", link: "page53.html" },
+        { id: 54, image: "https://picsum.photos/400/653", link: "page54.html" },
+        { id: 55, image: "https://picsum.photos/400/654", link: "page55.html" },
+        { id: 56, image: "https://picsum.photos/400/655", link: "page56.html" }
+    ]},
+    { name: "Dates", categories: [
+        { id: 57, image: "https://picsum.photos/400/656", link: "page57.html" },
+        { id: 58, image: "https://picsum.photos/400/657", link: "page58.html" },
+        { id: 59, image: "https://picsum.photos/400/658", link: "page59.html" },
+        { id: 60, image: "https://picsum.photos/400/659", link: "page60.html" },
+        { id: 61, image: "https://picsum.photos/400/660", link: "page61.html" },
+        { id: 62, image: "https://picsum.photos/400/661", link: "page62.html" },
+        { id: 63, image: "https://picsum.photos/400/662", link: "page63.html" }
+    ]},
+    { name: "Grapes", categories: [
+        { id: 64, image: "https://picsum.photos/400/663", link: "page64.html" },
+        { id: 65, image: "https://picsum.photos/400/664", link: "page65.html" },
+        { id: 66, image: "https://picsum.photos/400/665", link: "page66.html" },
+        { id: 67, image: "https://picsum.photos/400/666", link: "page67.html" },
+        { id: 68, image: "https://picsum.photos/400/667", link: "page68.html" },
+        { id: 69, image: "https://picsum.photos/400/668", link: "page69.html" },
+        { id: 70, image: "https://picsum.photos/400/669", link: "page70.html" }
+        ]}
+   
+    // Add similar entries for other fruits (Pomegranate, Papaya, Guava, etc.)
+];
+
+// Function to create category wrappers for each fruit set
+function createCategoryWrapper(fruitSet) {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('category-wrapper');
+    
+    const title = document.createElement('div');
+    title.classList.add('category-title');
+    title.textContent = fruitSet.name;
+    
+    const prevButton = document.createElement('button');
+    prevButton.classList.add('nav-button', 'prev');
+    prevButton.textContent = '<';
+    
+    const nextButton = document.createElement('button');
+    nextButton.classList.add('nav-button', 'next');
+    nextButton.textContent = '>';
+    
+    const categoryList = document.createElement('div');
+    categoryList.classList.add('category-list');
+    
+    // Generate the category items
+    const categoryListHTML = fruitSet.categories.map((category) => `
+        <div class="category">
+            <h3 class="category-type">${category.type}</h3> <!-- Add type above the image -->
+            <a href="${category.link}">
+                <img class="category-image" src="${category.image}" alt="${category.type}">
+            </a>
+        </div>
+    `).join('');
+    categoryList.innerHTML = categoryListHTML;
+
+    // Append elements to the wrapper
+    wrapper.appendChild(title);
+    wrapper.appendChild(prevButton);
+    wrapper.appendChild(categoryList);
+    wrapper.appendChild(nextButton);
+    
+    // Add navigation functionality
+    prevButton.addEventListener('click', () => {
+        categoryList.scrollBy({ left: -250, behavior: 'smooth' });
+    });
+
+    nextButton.addEventListener('click', () => {
+        categoryList.scrollBy({ left: 250, behavior: 'smooth' });
+    });
+
+    return wrapper;
+}
+
+// Insert each fruit set into the page
+const container = document.querySelector('.container');
+fruitSets.forEach((fruitSet) => {
+    const wrapper = createCategoryWrapper(fruitSet);
+    container.appendChild(wrapper);
+});
+
+function updateBreadcrumb(categoryName) {
+    const breadcrumb = document.querySelector('.breadcrumb-item.active');
+    breadcrumb.textContent = categoryName;
+}
+
+// Call this function when a user clicks on a category
+// Example:
+// updateBreadcrumb('Maize (Corn)');
+
+
+        // Update breadcrumb when clicking on a category link
+categoryList.querySelectorAll('.category a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const categoryName = cerealSet.name; // This gets the current cereal category name
+        updateBreadcrumb(categoryName);
+        // Optionally, you could navigate to a different page or load new content here
+    });
+});
+
+       
+
+       
+    </script>
+</body>
+</html>

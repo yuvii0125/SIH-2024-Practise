@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Methods</h2>
+        <ul id="payment-methods-list">
+            <!-- Existing payment methods will be added here dynamically -->
+        </ul>
+        <button class="add-payment-btn" onclick="window.location.href='add-payment.html'">Add Payment Method</button>
+    </div>
+    
+    <script>
+        // Function to load payment methods from local storage
+        function loadPaymentMethods() {
+            var paymentList = document.getElementById('payment-methods-list');
+            var paymentMethods = JSON.parse(localStorage.getItem('paymentMethods')) || [];
+            
+            paymentList.innerHTML = ''; // Clear existing list
+            paymentMethods.forEach(function(method) {
+                var newPaymentMethod = document.createElement('li');
+                newPaymentMethod.innerHTML = `
+                    <span>${method}</span>
+                    <button class="remove-btn" onclick="removePaymentMethod(this)">Remove</button>
+                `;
+                paymentList.appendChild(newPaymentMethod);
+            });
+        }
+
+        // Function to remove a payment method
+        function removePaymentMethod(button) {
+            var listItem = button.parentElement;
+            var paymentMethods = JSON.parse(localStorage.getItem('paymentMethods')) || [];
+            var methodText = listItem.querySelector('span').textContent;
+            var index = paymentMethods.indexOf(methodText);
+            if (index > -1) {
+                paymentMethods.splice(index, 1);
+                localStorage.setItem('paymentMethods', JSON.stringify(paymentMethods));
+                listItem.remove();
+            }
+        }
+
+        // Load payment methods on page load
+        window.onload = loadPaymentMethods;
+    </script>
+</body>
+</html>

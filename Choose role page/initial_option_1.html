@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Role</title>
+    <link rel="stylesheet" href="styles_initial_page.css">
+</head>
+<body class="bgimg">
+    <div class="container">
+        <div class="options-container">
+            <h1 id="heading">CHOOSE YOUR ROLE</h1>
+            <!-- Link to Sign-In/Sign-Up Form for BUYER -->
+            <a href="login_page.html" class="role-option buyer">BUYER</a>
+            <!-- Link to Sign-In/Sign-Up Form for SELLER -->
+            <a href="login_page.html" class="role-option seller">SELLER</a>
+        </div>
+        <div class="image-container">
+            <div class="slideshow-container">
+                <img src="kisan_img_01.jpg" class="slide" alt="Image 1">
+                <img src="kisan_img_02.jpg" class="slide" alt="Image 2">
+            </div>
+        </div>
+    </div>
+
+    <script src="initial.js"></script>
+    <script>
+        // Retrieve selected language and update content accordingly
+        const lang = localStorage.getItem('selectedLanguage') || 'en';
+
+        const translations = {
+            en: {
+                chooseRole: 'CHOOSE YOUR ROLE',
+                buyer: 'BUYER',
+                seller: 'SELLER'
+            },
+            hi: {
+                chooseRole: 'अपनी भूमिका चुनें',
+                buyer: 'खरीदार',
+                seller: 'विक्रेता'
+            },
+            as: {
+                chooseRole: 'আপোনাৰ ভূমিকা বাচক',
+                buyer: 'ক্ৰেতা',
+                seller: 'বিক্ৰেতা'
+            },
+            bn: {
+                chooseRole: 'আপনার ভূমিকা নির্বাচন করুন',
+                buyer: 'ক্রেতা',
+                seller: 'বিক্রেতা'
+            },
+            kn: {
+                chooseRole: 'ನಿಮ್ಮ ಪಾತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+                buyer: 'ಖರೀದಿದಾರ',
+                seller: 'ಮಾರಾಟಗಾರ'
+            },
+            gu: {
+                chooseRole: 'તમારો ભાગ પસંદ કરો',
+                buyer: 'ખરીદનાર',
+                seller: 'વેચનાર'
+            },
+            ml: {
+                chooseRole: 'നിങ്ങളുടെ വേഷം തിരഞ്ഞെടുക്കുക',
+                buyer: 'വാങ്ങുന്നവന്‍',
+                seller: 'വ്യാപാരി'
+            },
+            mr: {
+                chooseRole: 'तुमची भूमिका निवडा',
+                buyer: 'खरेदीदार',
+                seller: 'विक्रेता'
+            },
+            or: {
+                chooseRole: 'ଆପଣଙ୍କର ଭୂମିକା ବାଛନ୍ତୁ',
+                buyer: 'କ୍ରେତା',
+                seller: 'ବିକ୍ରେତା'
+            },
+            pa: {
+                chooseRole: 'ਆਪਣੀ ਭੂਮਿਕਾ ਚੁਣੋ',
+                buyer: 'ਖਰੀਦਦਾਰ',
+                seller: 'ਵਿਕਰੇਤਾ'
+            },
+            ta: {
+                chooseRole: 'உங்கள் பங்கைத் தேர்ந்தெடுக்கவும்',
+                buyer: 'வாங்குபவர்',
+                seller: 'விற்பனையாளர்'
+            },
+            te: {
+                chooseRole: 'మీ పాత్రను ఎంచుకోండి',
+                buyer: 'కొనుగోలుదారు',
+                seller: 'అమ్మకందారు'
+            },
+            ur: {
+                chooseRole: 'اپنا کردار منتخب کریں',
+                buyer: 'خریدار',
+                seller: 'فروشندہ'
+            },
+            mni: {
+                chooseRole: 'আপোনা ভূমিকা শাকপা',
+                buyer: 'খুন্দা',
+                seller: 'খুঙাঙ্লো'
+            },
+            ks: {
+                chooseRole: 'اپنی رولت چھنِ',
+                buyer: 'خریدݨہار',
+                seller: 'فروختنۂر'
+            },
+            doi: {
+                      chooseRole: 'اپنی کردار منتخب کریں',
+                      buyer: 'خریدار',
+                      seller: 'فروخت کنندہ'
+            }
+
+        };
+
+        // Update the page content based on the selected language
+        document.getElementById('heading').innerText = translations[lang]?.chooseRole || translations['en'].chooseRole;
+        document.querySelector('.buyer').innerText = translations[lang]?.buyer || translations['en'].buyer;
+        document.querySelector('.seller').innerText = translations[lang]?.seller || translations['en'].seller;
+    </script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Display</title>
+
+    
+	<script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,as,bn,kn,gu,ml,mr,or,pa,ta,te,ur,mni,ks,doi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 50px;
+            box-sizing: border-box;
+            background-color: #d7d7d7;
+            margin-top: 130px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+            padding: 10px;
+            background-color: #d7d7d7;
+        }
+
+        .product-box {
+            padding: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 20px;
+            position: relative;
+            grid-template-rows: auto 1fr auto;
+            background: #ffffff;
+        }
+
+        .product-box:hover {
+            box-shadow: 2px 2px 20px rgba(98, 98, 98);
+            transition: all 0.7s;     
+        }
+
+        .product-box img {
+            width: 110%;
+            height:101%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: bold;
+            grid-column: span 2;
+        }
+
+        .product-address,
+        .product-quantity,
+        .product-delivery-time,
+        .product-delivery-by-farmer,
+        .product-payment-method,
+        .product-packaging-style {
+            font-size: 14px;
+            color: #555;
+            margin-bottom:2px;
+        }
+
+        .product-packaging-style
+        {
+            margin-top:-15px;
+        }
+
+        .product-address {
+            grid-column: span 2;
+        }
+
+        .star-rating {
+            font-size: 18px;
+            position: absolute;
+            bottom: 76px;
+            left: 200px;
+        }
+
+        .star-rating span {
+            margin-left: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-direction: column;
+            grid-column: span 2;
+        }
+
+        .button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            color: white;
+            margin-left:160px;
+            width:140px;
+            border-radius:7px;
+        }
+
+        .buy-button {
+            background-color: rgb(48, 137, 48);
+        }
+
+        .buy-button:hover
+        {
+            transition: all 0.6s;
+            padding: 10px 18px;
+            box-shadow: 14px 8px 30px rgb(152, 152, 152);
+            width:129px;
+            border-radius:10px;
+            font-size:17px;
+            letter-spacing:0.8px;
+            
+        }
+
+        .terms-link {
+            background-color: transparent;
+            border: 1px solid #007BFF;
+            color: #007BFF;
+            width:140px;
+        }
+
+        .pricing {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            background-color: #f8f9fa;
+            padding: 30px;
+            position: fixed; /* Make the navigation fixed */
+            top: 0; /* Stick it to the top */
+            left: 0;
+            width: 100%; /* Full width of the page */
+            z-index: 1000; /* Ensure it's on top of other elements */
+            margin-top: 0; /* Adjust if needed */
+            margin-left: 0; /* Adjust to start from the left edge */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a subtle shadow */
+        }
+
+.breadcrumb-item {
+    margin-left: 70px;
+    margin-top: 1.18%;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #9b9b9b;
+}
+
+.breadcrumb-item a:hover
+{
+    color: #000000;
+    transition: all 0.6s;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left:70px;
+}
+
+.search-input {
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 300px; /* Adjust width as needed */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+.search-icon {
+    border: none;
+    background: none;
+    padding: 10px;
+    margin-left: -49px; /* Adjust this value based on the size of the icon and the padding */
+    cursor: pointer;
+}
+
+.search-icon i {
+    font-size: 20px; /* Adjust size of the icon */
+    color: #007bff; /* Color of the icon */
+}
+
+.search-icon:hover i {
+    color: #ffffff; /* Darker shade on hover */
+}
+
+/* Google Translate Styling */
+#google_translate_element {
+    margin-left:100px; /* Align to the right */
+	margin-top: 8px;
+	padding:7px;
+	border-radius:10px;
+}
+
+/* Dropdown Styling */
+#google_translate_element {
+    max-height: 80px;  /* Limit visible height to show 3-4 languages */
+      /* Enable scrolling */
+    font-size: 20px;   /* Increase font size for better visibility */
+}
+
+/* Hide the Google Translate banner */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+    </style>
+</head>
+<body>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="categories.html">Categories</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Current Category</li>
+            <form class="search-form" action="search_results.html" method="GET">
+                <input class="search-input" type="search" name="query" placeholder="Search..." aria-label="Search">
+                <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <!-- Google Translate Dropdown -->
+            <li id="google_translate_element"></li>
+        </ol>
+     
+    </nav>
+    <div class="product-container">
+        <!-- Product Box 1 -->
+        <div class="product-box">
+            <img src="Royal Apple-1.webp" alt="Apple">
+            <div class="pricing">₹50/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Visnagar, Gujarat</div>
+                <div class="product-quantity">Quantity : 100 kg</div>
+                <div class="product-delivery-time">Delivery Time : 2-5 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+
+                
+                
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar product-box for additional products -->
+        <!-- Product Box 2 -->
+        <div class="product-box">
+            <img src="Royal Apple-2.webp" alt="Mango">
+            <div class="pricing">₹80/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Junagadh, Gujarat</div>
+                <div class="product-quantity">Quantity : 150 kg</div>
+                <div class="product-delivery-time">Delivery Time : 1-3 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+            <div class="star-rating">⭐⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+        </div>
+
+        <!-- Add more product boxes as needed -->
+
+    </div>
+
+    <div class="product-container">
+        <!-- Product Box 1 -->
+        <div class="product-box">
+            <img src="Royal Apple-3.webp" alt="Apple">
+            <div class="pricing">₹50/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Visnagar, Gujarat</div>
+                <div class="product-quantity">Quantity : 100 kg</div>
+                <div class="product-delivery-time">Delivery Time : 2-5 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+
+                
+                
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar product-box for additional products -->
+        <!-- Product Box 2 -->
+        <div class="product-box">
+            <img src="Royal Apple-4.webp" alt="Mango">
+            <div class="pricing">₹80/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Junagadh, Gujarat</div>
+                <div class="product-quantity">Quantity : 150 kg</div>
+                <div class="product-delivery-time">Delivery Time : 1-3 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+            <div class="star-rating">⭐⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+        </div>
+
+        <!-- Add more product boxes as needed -->
+
+    </div>
+
+    <div class="product-container">
+        <!-- Product Box 1 -->
+        <div class="product-box">
+            <img src="Royal Apple-5.webp" alt="Apple">
+            <div class="pricing">₹50/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Visnagar, Gujarat</div>
+                <div class="product-quantity">Quantity : 100 kg</div>
+                <div class="product-delivery-time">Delivery Time : 2-5 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+
+                
+                
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar product-box for additional products -->
+        <!-- Product Box 2 -->
+        <div class="product-box">
+            <img src="Royal Apple-6.webp" alt="Mango">
+            <div class="pricing">₹80/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Junagadh, Gujarat</div>
+                <div class="product-quantity">Quantity : 150 kg</div>
+                <div class="product-delivery-time">Delivery Time : 1-3 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+            <div class="star-rating">⭐⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+        </div>
+
+        <!-- Add more product boxes as needed -->
+
+    </div>
+
+    <div class="product-container">
+        <!-- Product Box 1 -->
+        <div class="product-box">
+            <img src="Royal Apple-7.webp" alt="Apple">
+            <div class="pricing">₹50/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Visnagar, Gujarat</div>
+                <div class="product-quantity">Quantity : 100 kg</div>
+                <div class="product-delivery-time">Delivery Time : 2-5 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+
+                
+                
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar product-box for additional products -->
+        <!-- Product Box 2 -->
+        <div class="product-box">
+            <img src="Royal Apple-8.webp" alt="Mango">
+            <div class="pricing">₹80/kg</div>
+            <div class="product-details">
+                <div class="product-name">Apple</div>
+                <div class="product-address">Junagadh, Gujarat</div>
+                <div class="product-quantity">Quantity : 150 kg</div>
+                <div class="product-delivery-time">Delivery Time : 1-3 days</div>
+                <div class="product-delivery-by-farmer">Delivery by Farmer : Yes</div>
+                <div class="product-payment-method">Payment Methods : UPI, Cash</div>
+                <div class="product-packaging-style">Packaging : Boxed</div>
+                <div class="buttons-container">
+                    <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
+                    <a href="buy.html" class="button buy-button">Next</a>
+                </div>
+            </div>
+            <div class="star-rating">⭐⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
+        </div>
+
+        <!-- Add more product boxes as needed -->
+
+    </div>
+
+    <script>
+          function updateBreadcrumb(categoryName) {
+    const breadcrumb = document.querySelector('.breadcrumb-item.active');
+    breadcrumb.textContent = categoryName;
+}
+
+// Call this function when a user clicks on a category
+// Example:
+// updateBreadcrumb('Maize (Corn)');
+
+
+        // Update breadcrumb when clicking on a category link
+categoryList.querySelectorAll('.category a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const categoryName = cerealSet.name; // This gets the current cereal category name
+        updateBreadcrumb(categoryName);
+        // Optionally, you could navigate to a different page or load new content here
+    });
+});
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection</title>
+    <link rel="stylesheet" href="language_page.css">
+</head>
+<body>
+    <div class="language-selection-container">
+        <div class="header">
+            <img src="logo_india.jpeg" alt="Logo">
+            <div>
+                <h2>MINISTRY OF AGRICULTURE AND FARMERS WELFARE</h2>
+                <p>कृषि एवं किसान कल्याण मंत्रालय</p>
+            </div>
+        </div>
+        <div class="languages">
+            <button class="language-btn" onclick="selectLanguage('en')">English</button>
+            <button class="language-btn" onclick="selectLanguage('hi')">हिंदी</button>
+            <button class="language-btn" onclick="selectLanguage('as')">অসমীয়া</button>
+            <button class="language-btn" onclick="selectLanguage('bn')">বাংলা</button>
+            <button class="language-btn" onclick="selectLanguage('kn')">ಕನ್ನಡ</button>
+            <button class="language-btn" onclick="selectLanguage('gu')">ગુજરાતી</button>
+            <button class="language-btn" onclick="selectLanguage('ml')">മലയാളം</button>
+            <button class="language-btn" onclick="selectLanguage('mr')">मराठी</button>
+            <button class="language-btn" onclick="selectLanguage('or')">ଓଡ଼ିଆ</button>
+            <button class="language-btn" onclick="selectLanguage('pa')">ਪੰਜਾਬੀ</button>
+            <button class="language-btn" onclick="selectLanguage('ta')">தமிழ்</button>
+            <button class="language-btn" onclick="selectLanguage('te')">తెలుగు</button>
+            <button class="language-btn" onclick="selectLanguage('ur')">اردو</button>
+            <button class="language-btn" onclick="selectLanguage('mni')">মৈতৈলোন্</button>
+            <button class="language-btn" onclick="selectLanguage('ks')">کٲشُر</button>
+            <button class="language-btn" onclick="selectLanguage('doi')">ڈوگری</button>
+        </div>
+    </div>
+
+    <script>
+        function selectLanguage(langCode) {
+            // Store selected language in localStorage or pass as query parameter
+            localStorage.setItem('selectedLanguage', langCode);
+            window.location.href = 'initial_option_1.html';
+        }
+    </script>
+</body>
+</html>
